@@ -1,0 +1,76 @@
+.topBar {
+  position: fixed;
+  height: 150px;
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.colLogo {
+  margin-left: 150px;
+  text-align: right;
+}
+.logoGuild {
+  margin-top: 5px;
+  width: 140px;
+  height: 140px;
+}
+
+.titulo {
+  margin-top: 25px;
+  font-size: 76px;
+  line-height: 66px;
+  font-weight: bold;
+  text-align: center;
+  color: #bbade2;
+}
+
+.paginas {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 530;
+}
+
+.menu {
+  margin-top: 5px;
+  margin-left: 5px;
+  cursor: pointer;
+  text-decoration: underline
+}
+
+body {
+  background-image: url("images/sw.jpeg");
+  width: auto;
+  background-repeat: inherit;
+  background-attachment: fixed;
+}
+
+.tituloApresentacao {
+  margin-top: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: green;
+  font-size: 40px;
+  line-height: 50px;
+  font-weight: bold;
+}
+
+.inicioApresentacao {
+  font-size: 20px;
+  text-align: justify;
+}
+
+#inicio {
+  text-align:  center
+}
+
+.banner {
+  margin-top: 20px;
+  margin-left: 35px;
+  background-color: rgba(255, 255, 255, 0.9);
+  height: 400px; 
+  text-align: center;
+  border-bottom: 5px Solid rgba(180, 180, 180, 0.7);
+  border-right: 5px Solid rgba(180, 180, 180, 0.7);
+}
+#regras, #advertencias , #contato{
+  display: none;
+}

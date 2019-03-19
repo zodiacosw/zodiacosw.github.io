@@ -15,5 +15,49 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="zodiaco.js"></script>
 
+    <div class="col-md-12 topBar">
+      <div class="col-md-2 colLogo">
+        <img class="logoGuild" src="images/zodiaco1.png"/>
+      </div>
+      <div class="col-md-6">
+        <div class="row titulo">
+          << Zodíaco >>
+        </div>
+        <div class="row paginas">
+          <div class="col-md-1"></div>
+          <div onclick="mudaTela('inicio')" class="menu col-md-2">Inicio</div>
+          <div onclick="mudaTela('regras')" class="menu col-md-2">Regras</div>
+          <div onclick="mudaTela('advertencias')" class="menu col-md-2">Advertências</div>
+          <div onclick="mudaTela('contato')" class="menu col-md-2">Contato</div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12 corpo">
+      <div id="inicio">
+          <div class="col-md-11 banner">
+            <div class="col-md-4">
+              <img class="imgTw" src="images/tw.png" />
+            </div>
+            <div class="col-md-8">
+              <div class="row tituloApresentacao">
+                Bem Vindos...
+              </div>
+              <br/>
+              <div class="row inicioApresentacao">
+                Somos a guild Zodíaco, uma guild criada para auxiliar no crescimento de seus membros. Acreditamos que o trabalho em equipe, é a chave para o sucesso, por este motivo, aqui você vai encontrar:<br>
+                <br/>
+                <label class="topicoApresentacao">* Amizade</label><br/>
+                <label class="topicoApresentacao">* Liderança</label><br/>
+                <label class="topicoApresentacao">* Auxílio em toda e qualquer dúvida</label><br/>
+                <label class="topicoApresentacao">* Motivação</label><br/><br/>
+                <div style="text-align: center;">Venha fazer parte desta familia!</div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div id="regras">regras</div>
+      <div id="advertencias">Advertências</div>
+      <div id="contato">contato</div>
+    </div>
   </body>
 </html>
