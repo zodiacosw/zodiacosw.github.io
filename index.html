@@ -1,63 +1,291 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Zodíaco</title>
-    <link rel="stylesheet" href="zodiaco.css"/>
-    <link rel="shortcut icon" type="image/png" href="images/icone.png"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-  </head>
+<html lang="en">
+    <head>     
+        <title>Guild Zodíacos</title>
+  
+        <!-- Meta -->
+        <meta charset="utf-8">
+        <meta name="description" content="StartUp Landing Page Template" />
+        <meta name="keywords" content="Treetoper, startup, landing page, gradient background, image background, video background, template, responsive, bootstrap" />
+        <meta name="developer" content="TemplateOcean">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="zodiaco.js"></script>
+        <!-- FAV AND TOUCH ICONS   -->
+        <link rel="icon" href="images/icone.png">
+        <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
 
-    <div class="col-md-12 topBar">
-      <div class="col-md-2 colLogo">
-        <img class="logoGuild" src="images/zodiaco1.png"/>
-      </div>
-      <div class="col-md-6">
-        <div class="row titulo">
-          << Zodíaco >>
+        <!-- GOOGLE FONTS -->
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+
+        <!-- BOOTSTRAP CSS -->
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+        <!-- Image Slider -->
+        <link rel="stylesheet" href="css/plagin-css/plagin.css">
+
+        <!-- FONT ICONS -->
+        <link rel="stylesheet" href="icons/toicons/css/styles.css">
+
+        <!--   COUSTOM CSS link  -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+    </head>
+    <body class="">
+
+        <!-- Start: Navbar Area
+        ============================= -->
+        <header id="header" style="background-color: rgb(11, 11, 11)" class="okayNav-header navbar-fixed-top main-navbar-top">
+            <div class="container">
+                <div class="row">
+                    
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+
+                        <a class="okayNav-header__logo navbar-brand" href="#" onclick="mudaTela('inicio')">
+                            <img src="images/zodiaco1.png" alt="" class="logo-1 img-responsive">
+                        </a>
+                        <label class="titleText">Zodíaco</label>
+
+                    </div> <!-- End: .col-xs-3 -->
+                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-6">
+
+                        <nav role="navigation" class="okayNav pull-right" id="js-navbar-menu">
+                            <ul id="navbar-nav" class="navbar-nav">
+                                <li onclick="mudaTela('inicio')"><a class="btn-nav" href="#features">Início</a></li>
+                                <li onclick="mudaTela('regras')"><a class="btn-nav" href="#pricing">Regras</a></li>
+                                <li onclick="mudaTela('advertencias')"><a class="btn-nav" href="#reviews">Advertências</a></li>
+                                <li><a class="btn-nav" href="#" data-toggle="modal" data-target="#sign-in-form">Entrar</a></li>
+                            </ul>
+                        </nav>
+
+                    </div> <!-- End: .col-xs-9 -->
+                </div> <!-- End: .row -->
+            </div> <!-- End: .container -->
+        </header><!-- /header -->
+        <!-- End: Navbar Area
+        ============================= -->
+
+
+        <!-- Start: Modal Regra
+        ================================== -->
+        <div id="add-regra-form"  class="sign-form modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    
+                    <!-- Modal Close Button -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    
+                    <form method="post" class="single-form" action="">
+
+                        <div class="col-xs-12 text-center">
+                            <h2 class="section-heading p-b-30">Bem Vindo</h2>
+                        </div>
+
+                        <div class="col-xs-12">
+                            <!-- Email -->
+                            <input name="user" class="contact-email form-control" type="text" placeholder="Usuário*" required="">
+                        </div>
+                        <div class="col-xs-12">
+                            <!-- Subject -->
+                            <input name="password" class="contact-password form-control" type="password" placeholder="Senha" required="">
+                        </div>
+                        
+                        <!-- Subject Button -->
+                        <div class="btn-form text-center col-xs-12">
+                            <button onclick="login()" class="btn btn-fill">Entrar</button>
+                        </div>
+                    </form>
+
+                </div><!-- End: .modal-content -->
+            </div><!-- End: .modal-dialog -->
+        </div><!-- End: .modal -->
+         <!-- End: Modal Regra
+        ================================== -->
+
+
+        <!-- Start: Sign In Form
+        ================================== -->
+        <div id="sign-in-form"  class="sign-form modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    
+                    <!-- Modal Close Button -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    
+                    <form method="post" class="single-form" action="">
+
+                        <div class="col-xs-12 text-center">
+                            <h2 class="section-heading p-b-30">Bem Vindo</h2>
+                        </div>
+
+                        <div class="col-xs-12">
+                            <!-- Email -->
+                            <input id="user" name="user" class="contact-email form-control" type="text" placeholder="Usuário*" required="">
+                        </div>
+                        <div class="col-xs-12">
+                            <!-- Subject -->
+                            <input id="password" name="password" class="contact-password form-control" type="password" placeholder="Senha" required="">
+                        </div>
+                        
+                        <!-- Subject Button -->
+                        <div class="btn-form text-center col-xs-12">
+                            <div onclick="login()" class="btn btn-fill">Entrar</div>
+                        </div>
+                    </form>
+
+                </div><!-- End: .modal-content -->
+            </div><!-- End: .modal-dialog -->
+        </div><!-- End: .modal -->
+        <!-- End: Sign In Form
+        ================================== -->
+
+        <div id="inicio">
+            <!-- Start: Header Section
+            ================================ -->
+            <section class="header-section-1 bg-image-1 header-js" id="header" >
+                <div class="overlay-color">
+                    <div class="container">
+                        <div class="row section-separator">
+
+                            <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1">
+                                <div class="part-inner text-center">
+
+                                    <!--  Header SubTitle Goes here -->
+                                    <h1 class="title">Guild Zodíaco!</h1> 
+
+                                    <div class="detail">
+                                        <p>Mais que uma guild, uma família..</p>
+                                    </div>
+                                    <div id="admin" style="display: none">
+                                        <br>
+                                        <li><a class="btn-nav" href="#" data-toggle="modal" data-target="#sign-in-form">Cadastrar Regra</a></li>
+                                        <li><a class="btn-nav" href="#" data-toggle="modal" data-target="#sign-in-form">Cadastrar Membro</a></li>
+                                        <li><a class="btn-nav" href="#" data-toggle="modal" data-target="#sign-in-form">Cadastrar Punição</a></li>
+                                        <li><a class="btn-nav" href="#" data-toggle="modal" data-target="#sign-in-form">Cadastrar Advertência</a></li>
+                                    </div>
+                                </div>
+                            </div> <!-- End: .part-1 -->
+
+                        </div> <!-- End: .row -->
+                    </div> <!-- End: .container -->
+                </div> <!-- End: .overlay-color -->
+            </section>
+            <!-- End: Header Section
+            ================================ -->
+
+
+
+
+            <!-- Start: Features Section 1
+            ====================================== -->
+            <section class="features-section-1 relative background-semi-dark" >
+                <div class="container">
+                    <div class="row section-separator">
+
+                        <div class="each-features col-sm-6">
+                            <div class="inner text-center bg-cover light-text" style="background-image: url(images/background-2.jpg);">
+                                <div class="overlay-color">
+                                    
+                                    <div class="group">
+                                        <h4 class="title">QUEM SOMOS</h4>
+                                        <div class="detail">
+                                            <p>Somos uma guild de Summoners War, que acima de tudo, reconhece o jogador como bem mais valioso. Prezamos a amizade e estamos sempre em busca de novos desafios.</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="each-features col-sm-6">
+                            <div class="inner text-center bg-cover light-text" style="background-image: url(images/background-3.jpg);">
+                                <div class="overlay-color">
+                                    
+                                    <div class="group">
+                                        <h4 class="title">NOSSA MISSÃO</h4>
+                                        <div class="detail">
+                                            <p>Nossa missão é bem simples, buscamos sempre:<br>
+                                                1 - Divertir com o jogo<br>
+                                                2 - Estar entre as maiores guilds BR no server<br>
+                                                3 - Fazer novas amizades                                           
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                    </div> <!-- End: .row -->
+                </div> <!-- End: .container -->
+            </section>
+            <!-- End: Features Section 1
+            ======================================-->
         </div>
-        <div class="row paginas">
-          <div class="col-md-1"></div>
-          <div onclick="mudaTela('inicio')" class="menu col-md-2">Inicio</div>
-          <div onclick="mudaTela('regras')" class="menu col-md-2">Regras</div>
-          <div onclick="mudaTela('advertencias')" class="menu col-md-2">Advertências</div>
-          <div onclick="mudaTela('contato')" class="menu col-md-2">Contato</div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-12 corpo">
-      <div id="inicio">
-          <div class="col-md-11 banner">
-            <div class="col-md-4">
-              <img class="imgTw" src="images/tw.png" />
-            </div>
-            <div class="col-md-8">
-              <div class="row tituloApresentacao">
-                Bem Vindos...
-              </div>
-              <br/>
-              <div class="row inicioApresentacao">
-                Somos a guild Zodíaco, uma guild criada para auxiliar no crescimento de seus membros. Acreditamos que o trabalho em equipe, é a chave para o sucesso, por este motivo, aqui você vai encontrar:<br>
-                <br/>
-                <label class="topicoApresentacao">* Amizade</label><br/>
-                <label class="topicoApresentacao">* Liderança</label><br/>
-                <label class="topicoApresentacao">* Auxílio em toda e qualquer dúvida</label><br/>
-                <label class="topicoApresentacao">* Motivação</label><br/><br/>
-                <div style="text-align: center;">Venha fazer parte desta familia!</div>
-              </div>
-            </div>
-          </div>
-      </div>
-      <div id="regras">regras</div>
-      <div id="advertencias">Advertências</div>
-      <div id="contato">contato</div>
-    </div>
-  </body>
+
+        <!-- Start: Features Section 2
+        ====================================== -->
+        <section id="regras" style="display: none" class="features-section-1 relative background-semi-dark" >
+            <div class="container">
+                <div class="row section-separator">
+                    regras
+                </div> <!-- End: .row -->
+            </div> <!-- End: .container -->
+        </section>
+        <!-- End: Features Section 2
+        ======================================-->
+
+
+        <!-- Start: Features Section 3
+        ====================================== -->
+        <section id="advertencias" style="display: none"class="features-section-1 relative background-semi-dark" >
+            <div class="container">
+                <div class="row section-separator">
+                    advertencias
+                </div> <!-- End: .row -->
+            </div> <!-- End: .container -->
+        </section>
+        <!-- End: Features Section 3
+        ======================================-->
+
+
+        <!-- Start: Footer Section 1
+        ================================== -->
+        <footer class="footer-section background-dark">
+            <div class="container">
+                <div class="row">
+                    <div style="margin-top: 30px;" class="copyright text-center col-xs-12">
+                        <p>Todos os direitos reservados.</p>
+                    </div> <!-- End: .copyright -->
+                </div><!-- End: .section-separator  -->
+            </div> <!-- End: .container  -->
+        </footer>
+        <!-- End: Footer Section 1
+        ================================== -->
+
+
+
+        
+        <!-- SCRIPTS 
+        ========================================-->
+        <script src="https://momentjs.com/downloads/moment.min.js"></script>
+        <script src="js/plagin-js/jquery-1.11.3.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="js/plagin-js/plagin.js"></script>
+
+        <!-- Custom Script 
+        ==========================================-->
+        <script src="js/custom-scripts.js"></script>
+
+        <script src="js/zodiaco.js"></script>
+
+
+    </body>
+
 </html>
